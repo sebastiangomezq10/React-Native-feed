@@ -8,33 +8,22 @@ const parseThousands = (value) => {
 
 const RepositoryData = (props) => {
   return (
-    <View
-      key={props.id}
-      style={{ flexDirection: "row", justifyContent: "space-around" }}
-    >
+    <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
       <View>
-        <StyledText aling="center" fontWeight="bold">
-          Ciudad
-        </StyledText>
-        <StyledText aling="center">{props.ciudad}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{parseThousands(props.stargazersCount)}</StyledText>
+        <StyledText align='center'>Stars</StyledText>
       </View>
       <View>
-        <StyledText aling="center" fontWeight="bold">
-          Edad:{" "}
-        </StyledText>
-        <StyledText aling="center">{props.edad}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{parseThousands(props.forksCount)}</StyledText>
+        <StyledText align='center'>Forks</StyledText>
       </View>
       <View>
-        <StyledText aling="center" fontWeight="bold">
-          direccion:
-        </StyledText>
-        <StyledText aling="center"> {props.direccion}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{props.reviewCount}</StyledText>
+        <StyledText align='center'>Review</StyledText>
       </View>
       <View>
-        <StyledText aling="center" fontWeight="bold">
-          Valor Hora:
-        </StyledText>
-        <StyledText aling="center"> {parseThousands(props.valorHora)}</StyledText>
+        <StyledText align='center' fontWeight='bold'>{props.ratingAverage}</StyledText>
+        <StyledText align='center'>Rating</StyledText>
       </View>
     </View>
   );

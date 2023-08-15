@@ -1,32 +1,34 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from "react";
 import Constants from "expo-constants";
-import { Text, View } from "react-native";
+import { Platform, Text, View } from "react-native";
 import RepostoryList from "./RepositoryList";
 import AppBar from "./AppBar";
 // import { Redirect, Route, Switch } from "react-router-native";
-import { Route,Routes, Link, Switch, redirect } from "react-router-native";
+import { Route, Routes, Redirect } from "react-router-native";
+import LogInPage from "../pages/Login";
+// const AppBar = Platform.select({
+//   ios: () => require("./IosAppBar").default,
+//   default: () => require("./AppBar").default,
+// })();
 
+const NoMatch = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      <Text>Ups parece que estas perdido</Text>
+    </View>
+  );
+};
 const Main = () => {
   return (
     <View style={{ flex: 1 }}>
       <AppBar />
-      {/* <Link path="/" exact>
-        <RepostoryList></RepostoryList>
-      </Link> */}
-      <Link path="/signin" exact>
-        <Text>sing in </Text>
-      </Link>
       <Routes>
-
-        <Route path="/" exact Component={RepostoryList}>
-          {/* <RepostoryList></RepostoryList> */}
-        </Route>
-        {/* <Route path="/signin" exact>
-          <Text>sing in </Text>
-        </Route> */}
+        <Route path="/" exact Component={RepostoryList} />
+        <Route path="/signin" exact Component={LogInPage} />
+        {/* <Redirect from="/old-match" to="/will-match" /> */}
+        {/* <Route component={NoMatch} /> */}
       </Routes>
-      {/* <redirect to="/" /> */}
     </View>
   );
 };

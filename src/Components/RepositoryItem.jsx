@@ -7,8 +7,8 @@ import StyledText from "./StyledText.jsx";
 const RepostoryItem = (props) => {
   return (
     <View key={props.id.toString()} style={styles.container}>
-      <RepositoryItemHeader {...props}></RepositoryItemHeader>
-      <RepositoryData {...props}></RepositoryData>
+      <RepositoryItemHeader {... props}></RepositoryItemHeader>
+      <RepositoryData {... props}></RepositoryData>
     </View>
   );
 };
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
   apellido: {
     padding: 4,
     color: theme.colors.white,
-    backgroundColor: theme.colors.primary,
+    // backgroundColor: theme.colors.primary,
+    // backgroundColor: theme.colors.primary,
     alignSelf: "flex-start",
     borderRadius: 4,
     overflow: "hidden", //aveces se debe poner para que el radius sevea
